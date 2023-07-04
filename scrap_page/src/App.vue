@@ -10,10 +10,20 @@
         </ul>
       </nav>
     </header>
+  </div>
     <body>
       <span class="border-background"></span>
+      <ul class="list-group m-2 p-3" style="width: 200px; position: fixed; top:30%; z-index: 100;">
+      <button type="button" class="list-group-item list-group-item-action first-button" aria-current="true">
+        초기화면
+      </button>
+      <button type="button" class="list-group-item list-group-item-action">정보게시판</button>
+      <button type="button" class="list-group-item list-group-item-action">추천게시판</button>
+      <button type="button" class="list-group-item list-group-item-action">나의 스크랩</button>
+      <button type="button" class="list-group-item list-group-item-action last-button">내 정보</button>
+    </ul>
     </body>
-  </div>
+ 
 </template>
 
 <script>
@@ -37,6 +47,7 @@ export default {
   }
   
   header{
+    flex-wrap: wrap;
     width: 100%;
     height: 100px;
     z-index: 2000; /*쌓임 순서*/
@@ -79,18 +90,59 @@ export default {
     color: rgba(0, 0, 0, 0.8);
   }
 
-  .border-background{
-    z-index: -1;
-    border: 2px solid;
-    position: absolute;
-    bottom: 0;
-    width: 90%;
-    height: 75%;
-    border-bottom: none;
-    box-sizing: border-box;
-    border-color: rgb(130, 130, 130);
-    left: 50%;  /* 요소를 부모 요소의 중앙으로 이동시킵니다. */
-    transform: translateX(-50%);
-    padding: 120px 20px 0px 20px;
+  body{
+    width: 1440px;
+    overflow: visible;
   }
+  .border-background {
+  text-align: center;
+  flex-wrap: wrap;
+  z-index: -1;
+  border: 2px solid;
+  position: absolute;  /* position을 absolute로 변경 */
+  top: 200px;  /* 픽셀 단위로 top 위치를 지정 */ 
+  left: 90px; 
+  width: 1260px;  /* 픽셀 단위로 width를 지정 */
+  height: 100%;  /* 픽셀 단위로 height를 지정 */
+  border-bottom: none;
+  box-sizing: border-box;
+  border-color: rgb(130, 130, 130);
+  
+}
+
+.list-group{
+  border-radius: 30px;
+}
+
+.list-group-item{
+  text-align: center;
+  background-color: aquamarine;
+  height: 80px;
+  font-weight: bold;
+}
+
+.first-button{
+  height: 100px;
+}
+
+.last-button{
+  height: 100px;
+}
+
+/* .menu-bar {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-bottom: 1rem;
+  overflow-x: auto;
+  text-align: center;
+  margin-top: 200px;
+  width: 100px;
+  height: 500px;
+  position: relative;  /* 수정 */
+  /* background-color: #a2e4ed;
+  z-index: 1;
+  border-radius: 10%;
+  padding
+} */ 
+
   </style>
