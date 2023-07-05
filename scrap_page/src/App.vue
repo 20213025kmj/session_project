@@ -12,8 +12,13 @@
     </header>
   </div>
     <body>
-      <span class="border-background"></span>
-      <ul class="list-group m-2 p-3" style="width: 200px; position: fixed; top:30%; z-index: 100;">
+      <span class="border-background">
+        <div class="scrap-title-text"> 나의 스크랩 게시판</div>
+        <div class="current-page">현재페이지 100/300</div>
+        <span class="underline"></span>
+      </span>
+      <div type="text" style=""></div>
+      <ul class="list-group m-2 p-3">
       <button type="button" class="list-group-item list-group-item-action first-button" aria-current="true">
         초기화면
       </button>
@@ -21,7 +26,7 @@
       <button type="button" class="list-group-item list-group-item-action">추천게시판</button>
       <button type="button" class="list-group-item list-group-item-action">나의 스크랩</button>
       <button type="button" class="list-group-item list-group-item-action last-button">내 정보</button>
-    </ul>
+      </ul>
     </body>
  
 </template>
@@ -99,26 +104,66 @@ export default {
   flex-wrap: wrap;
   z-index: -1;
   border: 2px solid;
-  position: absolute;  /* position을 absolute로 변경 */
-  top: 200px;  /* 픽셀 단위로 top 위치를 지정 */ 
+  position: absolute;
+  top: 200px;
   left: 90px; 
-  width: 1260px;  /* 픽셀 단위로 width를 지정 */
-  height: 100%;  /* 픽셀 단위로 height를 지정 */
+  width: 1260px;
+  height: 100%;
   border-bottom: none;
   box-sizing: border-box;
   border-color: rgb(130, 130, 130);
-  
+  }
+  /* 추가 */
+  .underline::after {
+    content: '';
+    display: block;
+    width: 920px;
+    height: 2px;
+    background: black;
+    position: absolute;
+    margin-bottom: 750px;
+    margin-top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+
+.scrap-title-text{
+  font-size: 250%;
+  font-weight: 600;
+  padding-top: 40px;
+  padding-right: 580px;
 }
+.current-page{
+  font-size: 70%;
+  padding-left: 700px;
+}
+/* .border-underline{
+  position: relative;
+  text-align: center;
+  z-index: 100;
+  border-bottom: 2px solid black;
+  width: 900px;  /* 너비를 900px로 변경 */
+  /* height: 2px;
+  margin: auto;  /* 가운데 정렬을 위해 마진을 자동으로 설정 */
+  /*box-sizing: border-box;
+} */ 
+
 
 .list-group{
   border-radius: 30px;
+  width: 180px; 
+  position: fixed;
+  top:40%;
+  z-index: 100;
 }
 
 .list-group-item{
   text-align: center;
-  background-color: aquamarine;
+  background-color: #9EBDF8;
   height: 80px;
   font-weight: bold;
+  font-size: large;
 }
 
 .first-button{
@@ -128,21 +173,5 @@ export default {
 .last-button{
   height: 100px;
 }
-
-/* .menu-bar {
-  display: flex;
-  flex-wrap: nowrap;
-  padding-bottom: 1rem;
-  overflow-x: auto;
-  text-align: center;
-  margin-top: 200px;
-  width: 100px;
-  height: 500px;
-  position: relative;  /* 수정 */
-  /* background-color: #a2e4ed;
-  z-index: 1;
-  border-radius: 10%;
-  padding
-} */ 
 
   </style>
