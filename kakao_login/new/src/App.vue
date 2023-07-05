@@ -4,7 +4,7 @@
     <header>
       <div>
     <button @click="kakaoLogin">카카오 로그인</button>
-    <button @click="kakaoLogout">카카오 로그아웃</button>
+    <button @click="kakaoLogout">카카오 로그아웃.</button>
     </div>
       <a class="logo" href="App.vue">
         <img src="./assets/logo.png" height="100px">
@@ -15,6 +15,7 @@
         </ul>
       </nav>
     </header>
+
   </div>
 
   <body>
